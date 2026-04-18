@@ -1,0 +1,28 @@
+# KI-Prompts
+
+## Tool
+Google AI (Stitch)
+
+## Ziel
+Erstellung einer Benutzeroberfläche für eine Bookclub-App
+
+## Prompt 1
+ Erstelle eine moderne Benutzeroberfläche (GUI) für eine Bookclub-App mit:
+- Liste von Büchern
+- Bewertungssystem
+- Möglichkeit Bücher hinzuzufügen
+
+
+halte es in grün-braune töne
+
+## Ergebnis
+Es wurde ein UI-Design mit Dashboard, Buchübersicht und Design-System erstellt. (images/ui.png)
+
+### Dashboard
+![Dashboard](images/ui-dashboard.png)
+
+### Design
+![Design](images/ui-design.png) 
+
+### Diskussion
+![Diskussion](images/ui-diskussion.png)
