@@ -11,3 +11,7 @@ Eine einfache Anwendung zur Verwaltung von Büchern für einen persönlichen Buc
 
 ## Dokumentation
 Siehe Ordner /docs
+
+## Erweiterungsidee
+
+Zukünftig kann die Anwendung zu einer Multi-User-Plattform erweitert werden, bei der Administratoren Bücher verwalten und Nutzer Bewertungen und Rezensionen hinzufügen.
