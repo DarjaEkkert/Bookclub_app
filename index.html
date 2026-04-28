@@ -63,7 +63,11 @@ img {
 </div>
 
 <script>
-let books = [];
+let books = JSON.parse(localStorage.getItem("books")) || [];
+
+function save() {
+  localStorage.setItem("books", JSON.stringify(books));
+}
 
 function addBook() {
   const book = {
@@ -78,6 +82,7 @@ function addBook() {
   if (!book.title || !book.author) return;
 
   books.push(book);
+  save();
   render();
 
   document.getElementById("title").value = "";
@@ -88,6 +93,7 @@ function addBook() {
 
 function deleteBook(id) {
   books = books.filter(b => b.id !== id);
+  save();
   render();
 }
 
@@ -113,7 +119,8 @@ function render() {
     list.appendChild(div);
   });
 }
-</script>
 
+render();
+</script>
 </body>
 </html>
