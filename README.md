@@ -28,19 +28,11 @@ Die Anwendung wurde iterativ mit Hilfe von KI-Tools entwickelt.
 
 \## Dokumentation
 
-
-
-\- \[Projektidee](https://github.com/DarjaEkkert/Bookclub\_app/blob/main/docs/01\_idee.md.txt)
-
-\- \[KI-Prompts](https://github.com/DarjaEkkert/Bookclub\_app/blob/main/docs/02\_prompts.md.txt)
-
-\- \[Konzept](https://github.com/DarjaEkkert/Bookclub\_app/blob/main/docs/03\_konzept.md.txt)
-
-\- \[Umsetzung](https://github.com/DarjaEkkert/Bookclub\_app/blob/main/docs/04\_umsetzung.md.txt)
-
-\- \[Architektur](https://github.com/DarjaEkkert/Bookclub\_app/blob/main/docs/05\_architektur.md.txt)
-
-
+- [Projektidee](docs/01_idee.md)
+- [KI-Prompts](docs/02_prompts.md)
+- [Konzept](docs/03_konzept.md)
+- [Umsetzung](docs/04_umsetzung.md)
+- [Architektur](docs/05_architektur.md)
 
 \## Erweiterungsidee
 
