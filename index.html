@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<title>Bookclub App</title>
+<style>
+body {
+  font-family: Arial;
+  background: #f6f2ef;
+  padding: 20px;
+}
+.container {
+  max-width: 700px;
+  margin: auto;
+}
+input, textarea {
+  width: 100%;
+  padding: 8px;
+  margin: 5px 0;
+}
+button {
+  padding: 8px 12px;
+  margin: 5px;
+  cursor: pointer;
+}
+.book {
+  background: white;
+  padding: 10px;
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+}
+img {
+  width: 80px;
+  height: 120px;
+  object-fit: cover;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+  <h1>📚 My Book List</h1>
+
+  <input id="title" placeholder="Title">
+  <input id="author" placeholder="Author">
+  <input id="cover" placeholder="Cover URL">
+  <textarea id="review" placeholder="Review"></textarea>
+
+  <label>Rating:</label>
+  <select id="rating">
+    <option value="0">0</option>
+    <option value="1">1 ⭐</option>
+    <option value="2">2 ⭐</option>
+    <option value="3">3 ⭐</option>
+    <option value="4">4 ⭐</option>
+    <option value="5">5 ⭐</option>
+  </select>
+
+  <button onclick="addBook()">Add Book</button>
+
+  <div id="list"></div>
+</div>
+
+<script>
+let books = [];
+
+function addBook() {
+  const book = {
+    id: Date.now(),
+    title: document.getElementById("title").value,
+    author: document.getElementById("author").value,
+    cover: document.getElementById("cover").value,
+    review: document.getElementById("review").value,
+    rating: document.getElementById("rating").value
+  };
+
+  if (!book.title || !book.author) return;
+
+  books.push(book);
+  render();
+
+  document.getElementById("title").value = "";
+  document.getElementById("author").value = "";
+  document.getElementById("cover").value = "";
+  document.getElementById("review").value = "";
+}
+
+function deleteBook(id) {
+  books = books.filter(b => b.id !== id);
+  render();
+}
+
+function render() {
+  const list = document.getElementById("list");
+  list.innerHTML = "";
+
+  books.forEach(b => {
+    const div = document.createElement("div");
+    div.className = "book";
+
+    div.innerHTML = `
+      ${b.cover ? `<img src="${b.cover}">` : ""}
+      <div>
+        <b>${b.title}</b><br>
+        <i>${b.author}</i><br>
+        ⭐ ${b.rating}<br>
+        <p>${b.review}</p>
+        <button onclick="deleteBook(${b.id})">Delete</button>
+      </div>
+    `;
+
+    list.appendChild(div);
+  });
+}
+</script>
+
+</body>
+</html>
