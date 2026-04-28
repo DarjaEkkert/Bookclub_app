@@ -58,7 +58,7 @@ Die Anwendung verfügt nun über:
 
 ### Screenshot
 
-![Upload](image/app-v5-design.png)
+![Upload](Image/app-v5-design.png)
 ---
 
 ## Nächste Schritte
@@ -83,7 +83,7 @@ Technisch wird das ausgewählte Bild im Browser verarbeitet und gespeichert, sod
 * bessere Benutzererfahrung
 ### Screenshot
 
-![Upload](image/app-v6-image-upload.png)
+![Upload](Image/app-v6-image-upload.png)
 
 ## Einschränkung der aktuellen Lösung
 
