@@ -3,61 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <title>Bookclub App</title>
-<style>
-body {
-  font-family: Arial;
-  background: #f6f2ef;
-  padding: 20px;
-}
-.container {
-  max-width: 700px;
-  margin: auto;
-}
-input, textarea {
-  width: 100%;
-  padding: 8px;
-  margin: 5px 0;
-}
-button {
-  padding: 8px 12px;
-  margin: 5px;
-  cursor: pointer;
-}
-.book {
-  background: white;
-  padding: 10px;
-  margin-top: 10px;
-  display: flex;
-  gap: 10px;
-}
-img {
-  width: 80px;
-  height: 120px;
-  object-fit: cover;
-}
-</style>
+<link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 <div class="container">
-  <h1>📚 My Book List</h1>
+ 
+  <h1>Bookclub</h1>
+  <p class="subtitle">We need more books</p>
 
-  <input id="title" placeholder="Title">
-  <input id="author" placeholder="Author">
-  <input id="cover" placeholder="Cover URL">
-  <textarea id="review" placeholder="Review"></textarea>
+  <h2>📚 My Book List</h2>
 
-  <label>Rating:</label>
-  <select id="rating">
-    <option value="0">0</option>
-    <option value="1">1 ⭐</option>
-    <option value="2">2 ⭐</option>
-    <option value="3">3 ⭐</option>
-    <option value="4">4 ⭐</option>
-    <option value="5">5 ⭐</option>
-  </select>
+  <div class="form">
+    <input id="title" placeholder="Title">
+    <input id="author" placeholder="Author">
+    <input id="cover" placeholder="Cover URL (optional)">
+    <textarea id="review" placeholder="Your personal review"></textarea>
 
-  <button onclick="addBook()">Add Book</button>
+    <select id="rating">
+      <option value="0">0</option>
+      <option value="1">1 ⭐</option>
+      <option value="2">2 ⭐</option>
+      <option value="3">3 ⭐</option>
+      <option value="4">4 ⭐</option>
+      <option value="5">5 ⭐</option>
+    </select>
+
+    <button onclick="addBook()">Add Book</button>
+  </div>
 
   <div id="list"></div>
 </div>
@@ -107,12 +80,14 @@ function render() {
 
     div.innerHTML = `
       ${b.cover ? `<img src="${b.cover}">` : ""}
-      <div>
-        <b>${b.title}</b><br>
-        <i>${b.author}</i><br>
-        ⭐ ${b.rating}<br>
-        <p>${b.review}</p>
-        <button onclick="deleteBook(${b.id})">Delete</button>
+      <div class="book-content">
+        <div class="book-title">${b.title}</div>
+        <div class="book-author">by ${b.author}</div>
+        <div class="rating">⭐ ${b.rating}</div>
+        <div class="review">${b.review}</div>
+        <div class="actions">
+          <button onclick="deleteBook(${b.id})">🗑️</button>
+        </div>
       </div>
     `;
 
@@ -121,6 +96,7 @@ function render() {
 }
 
 render();
+
 </script>
 </body>
 </html>

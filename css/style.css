@@ -1,0 +1,94 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #f3ede7;
+  margin: 0;
+  padding: 30px;
+}
+
+.container {
+  max-width: 850px;
+  margin: auto;
+}
+
+h1 {
+  font-family: Georgia, serif;
+  color: #4b2e2e;
+  font-size: 42px;
+  margin-bottom: 5px;
+}
+
+.subtitle {
+  color: #8a7a73;
+  margin-bottom: 25px;
+}
+
+.form {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+  margin-bottom: 20px;
+}
+
+input, textarea, select {
+  width: 100%;
+  padding: 12px;
+  margin: 6px 0;
+  border-radius: 12px;
+  border: 1px solid #e3ddd7;
+  background: #faf7f4;
+}
+
+button {
+  background: #c86b3c;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  cursor: pointer;
+  float: right;
+}
+
+button:hover {
+  background: #a85a30;
+}
+
+.book {
+  display: flex;
+  gap: 15px;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 15px;
+  margin-top: 15px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+}
+
+img {
+  width: 90px;
+  height: 130px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.book-title {
+  font-family: Georgia, serif;
+  font-size: 18px;
+}
+
+.book-author {
+  color: #7c6d65;
+  font-size: 14px;
+}
+
+.rating {
+  color: #c86b3c;
+}
+
+.review {
+  margin-top: 5px;
+}
+
+.actions button {
+  background: transparent;
+  color: #666;
+}
