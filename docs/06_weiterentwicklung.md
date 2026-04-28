@@ -84,3 +84,10 @@ Technisch wird das ausgewählte Bild im Browser verarbeitet und gespeichert, sod
 ### Screenshot
 
 ![Upload](images/app-v6-image-upload.png)
+
+## Einschränkung der aktuellen Lösung
+
+Die Anwendung speichert Daten aktuell im localStorage des Browsers. 
+Dadurch sind die Daten nur auf dem jeweiligen Gerät verfügbar und werden nicht zwischen verschiedenen Nutzern oder Geräten synchronisiert.
+
+Für eine echte Buchclub-Anwendung ist daher zukünftig eine zentrale Datenbank erforderlich.
