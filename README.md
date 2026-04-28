@@ -33,6 +33,7 @@ Die Anwendung wurde iterativ mit Hilfe von KI-Tools entwickelt.
 - [Konzept](docs/03_konzept.md)
 - [Umsetzung](docs/04_umsetzung.md)
 - [Architektur](docs/05_architektur.md)
+- [Weiterentwicklung](docs/06_weiterentwicklung.md)
 
 \## Erweiterungsidee
 
