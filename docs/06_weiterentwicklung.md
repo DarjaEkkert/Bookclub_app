@@ -66,3 +66,21 @@ images/app-v5-design.png
 * Upload von Buchcovern vom lokalen Rechner
 * Speicherung der Daten (localStorage verbessern)
 * Erweiterung zur Multi-User-Anwendung (Admin / Nutzer)
+
+## Upload von Buchcovern
+
+Die Anwendung wurde um eine Funktion erweitert, mit der Buchcover direkt vom lokalen Rechner hochgeladen werden können.
+
+Zuvor war nur die Eingabe einer Bild-URL möglich.
+Durch die neue Funktion wird die Nutzung für den Anwender deutlich einfacher und intuitiver.
+
+Technisch wird das ausgewählte Bild im Browser verarbeitet und gespeichert, sodass es direkt in der Anwendung angezeigt werden kann.
+
+### Nutzen
+
+* einfachere Bedienung
+* keine externen Bildquellen notwendig
+* bessere Benutzererfahrung
+### Screenshot
+
+![Upload](images/app-v6-image-upload.png)

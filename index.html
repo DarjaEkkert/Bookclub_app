@@ -17,7 +17,7 @@
   <div class="form">
     <input id="title" placeholder="Title">
     <input id="author" placeholder="Author">
-    <input id="cover" placeholder="Cover URL (optional)">
+    <input type="file" id="coverFile" accept="image/*">
     <textarea id="review" placeholder="Your personal review"></textarea>
 
     <select id="rating">
@@ -43,27 +43,46 @@ function save() {
 }
 
 function addBook() {
+  const fileInput = document.getElementById("coverFile");
+  const file = fileInput.files[0];
+
+  const title = document.getElementById("title").value;
+  const author = document.getElementById("author").value;
+  const review = document.getElementById("review").value;
+  const rating = document.getElementById("rating").value;
+
+  if (!title || !author) return;
+
+  if (file) {
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      saveBook(title, author, review, rating, e.target.result);
+    };
+    reader.readAsDataURL(file);
+  } else {
+    saveBook(title, author, review, rating, "");
+  }
+
+  document.getElementById("title").value = "";
+  document.getElementById("author").value = "";
+  document.getElementById("review").value = "";
+  document.getElementById("coverFile").value = "";
+}
+
+function saveBook(title, author, review, rating, coverData) {
   const book = {
     id: Date.now(),
-    title: document.getElementById("title").value,
-    author: document.getElementById("author").value,
-    cover: document.getElementById("cover").value,
-    review: document.getElementById("review").value,
-    rating: document.getElementById("rating").value
+    title: title,
+    author: author,
+    cover: coverData,
+    review: review,
+    rating: rating
   };
-
-  if (!book.title || !book.author) return;
 
   books.push(book);
   save();
   render();
-
-  document.getElementById("title").value = "";
-  document.getElementById("author").value = "";
-  document.getElementById("cover").value = "";
-  document.getElementById("review").value = "";
 }
-
 function deleteBook(id) {
   books = books.filter(b => b.id !== id);
   save();
@@ -79,12 +98,16 @@ function render() {
     div.className = "book";
 
     div.innerHTML = `
-      ${b.cover ? `<img src="${b.cover}">` : ""}
+      ${b.cover ? `<img src="${b.cover}" />` : ""}
+
       <div class="book-content">
         <div class="book-title">${b.title}</div>
         <div class="book-author">by ${b.author}</div>
+
         <div class="rating">⭐ ${b.rating}</div>
-        <div class="review">${b.review}</div>
+
+        <div class="review">${b.review || ""}</div>
+
         <div class="actions">
           <button onclick="deleteBook(${b.id})">🗑️</button>
         </div>
