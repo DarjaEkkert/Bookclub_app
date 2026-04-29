@@ -1,99 +1,188 @@
 # KI-Prompts
 
-## Tool
-Google AI (Stitch)
-
 ## Ziel
-Erstellung einer Benutzeroberfläche für eine Bookclub-App
 
-## Prompt 1
- Erstelle eine moderne Benutzeroberfläche (GUI) für eine Bookclub-App mit:
-- Liste von Büchern
-- Bewertungssystem
-- Möglichkeit Bücher hinzuzufügen
+Unterstützung der Entwicklung einer Bookclub-App durch den Einsatz von KI-Tools zur Generierung von UI, Funktionalität und Architektur.
 
+---
 
-halte es in grün-braune töne
+## Verwendete Tools
 
-## Ergebnis
-Es wurde ein UI-Design mit Dashboard, Buchübersicht und Design-System erstellt. (images/ui.png)
+- Google AI (Stitch)
+- Lovable.dev
 
-### Dashboard
+---
+
+## Prompt 1 – UI-Design (Google AI / Stitch)
+
+Erstelle eine moderne Benutzeroberfläche (GUI) für eine Bookclub-App mit:
+- Liste von Büchern  
+- Bewertungssystem  
+- Möglichkeit, Bücher hinzuzufügen  
+
+Verwende grün-braune Farbtöne.
+
+### Ergebnis
+
+Es wurde ein UI-Design mit Dashboard, Buchübersicht und Design-System erstellt.
+
 ![Dashboard](images/ui-dashboard.png)
-
-### Design
-![Design](images/ui-design.png) 
-
-### Diskussion
+![Design](images/ui-design.png)
 ![Diskussion](images/ui-diskussion.png)
 
-## Prompt 2 – Umsetzung (Lovable)
+---
+
+## Prompt 2 – Grundversion (Lovable)
 
 Create a simple web application for a personal book club (single-user only).
 
-The app is only for personal use, not for multiple users.
+The app is only for personal use, not for multiple users.  
 No authentication or user accounts are required.
 
 Features:
-- Add a book (title, author)
-- Rate books (1–5 stars)
-- Write a personal opinion/review for each book
-- Display a list of all books
+- Add a book (title, author)  
+- Rate books (1–5 stars)  
+- Write a personal review  
+- Display a list of books  
 
 Design:
-- Clean, modern, and minimal
-- Inspired by a dashboard-style book tracking app
-- Use cards for books
-- Soft colors and readable typography
-- Use the uploaded screenshot as design inspiration
+- Clean, modern, minimal  
+- Card-based layout  
+- Soft colors and readable typography  
+- Use the uploaded screenshot as inspiration  
 
 Tech:
-- Simple frontend (HTML/CSS/JS or React)
-- Store data locally (e.g. localStorage)
-- No backend required
+- HTML, CSS, JavaScript or React  
+- Use localStorage  
+- No backend  
 
-## Tool
-Lovable.dev
+---
 
-## Prompt 3 – Umsetzung (Lovable)
+## Prompt 3 – Vereinfachte Umsetzung (Lovable)
 
 Create a very simple web app.
 
 The app should:
+- Allow adding a book (title, author)  
+- Show a list of books  
 
-- Allow adding a book (title, author)
-- Show a list of books
-Use plain HTML, CSS and JavaScript.
-Keep it very simple
+Use plain HTML, CSS and JavaScript.  
+Keep it very simple.
 
-## Ergebnis
+### Ergebnis
 
-(Images/app-v1-basic.png)
+![Version 1](images/app-v1-basic.png)
 
-## Prompt 4 – Umsetzung (Lovable)
-Add a text field to write a personal review for each book.
-Add a rating system (1–5 stars) for each book.
-Add an option to include a book cover image URL when adding a book.
-Display the book cover image in the book list.
+---
 
-## Ergebnis
+## Prompt 4 – Erweiterung Funktionen (Lovable)
 
-(Images/app-v2-basic.png)
+Add:
+- A text field for personal reviews  
+- A rating system (1–5 stars)  
+- A book cover image via URL  
 
-## Prompt 5 – Umsetzung (Lovable)
+Display the book cover in the book list.
 
-Use the uploaded image as design inspiration.(es würde ui_design.png genutzt)
+### Ergebnis
+
+![Version 2](images/app-v2-basic.png)
+
+---
+
+## Prompt 5 – Design-Anpassung (Lovable)
+
+Use the uploaded image as design inspiration.
+
 Apply:
-- warm terracotta and beige colors
-- soft green accents
-- clean typography
-- modern card-based layout
+- warm terracotta and beige colors  
+- soft green accents  
+- clean typography  
+- modern card-based layout  
 
-## Prompt 6 - Umsetzung (Lovable)
+---
 
-Add a delete button for each book in the list.
-The user should be able to remove a book from the list.
-Add a change button for each book in the list
-the user schould be able to change a book
+## Prompt 6 – CRUD-Funktionen (Lovable)
 
-(images/app-v4-edit-delete.png)
+Add:
+- A delete button for each book  
+- The user can remove books  
+- An edit button to update book data  
+
+### Ergebnis
+
+![Version 4](images/app-v4-edit-delete.png)
+
+---
+
+## Prompt 7 – Multi-User Erweiterung (Lovable)
+
+I already built a simple book club web app.
+
+Features:
+- Add books (title, author)  
+- Upload book cover from local device  
+- Write review and rating  
+- Store data in localStorage  
+
+Now I want to extend it to a multi-user application.
+
+Requirements:
+- Authentication (login / register)  
+- Roles: admin and user  
+- Admin can add books  
+- Users can mark books as read  
+- Users can add ratings and reviews  
+- Shared data for all users  
+
+Use Supabase for backend and authentication.  
+Keep the current UI design.
+
+### Architekturentscheidungen (durch Lovable)
+
+- Cover storage: Cloud storage  
+- Reviews: one review per user per book  
+- Admin: first registered user  
+- Auth: email + password  
+
+### Ergebnis
+
+![Login](images/app-v7-login.png)
+![Dashboard](images/app-v8-dashboard.png)
+
+---
+
+## Prompt 8 – Aggregierte Bewertungen (Lovable)
+
+Improve the book card to show aggregated data.
+
+Requirements:
+- Show average rating  
+- Show number of ratings  
+- Show how many users marked the book as read  
+- Display current user's rating  
+- Update values after interaction  
+
+### Ergebnis
+
+- durchschnittliche Bewertung  
+- Anzahl der Bewertungen  
+- Anzahl gelesener Nutzer  
+
+![Bewertungen](images/app-v9-bookrating.png)
+
+---
+
+## Prompt 9 – Echtzeit-Aktualisierung (Lovable)
+
+Fix real-time UI updates for book stats.
+
+Requirements:
+- Update UI immediately after rating/review  
+- Update read count instantly  
+- Re-fetch aggregated data  
+- No reload or logout required  
+
+### Ergebnis
+
+Änderungen (Bewertungen, Lesestatus) werden nun sofort angezeigt, ohne erneutes Laden der Seite.
