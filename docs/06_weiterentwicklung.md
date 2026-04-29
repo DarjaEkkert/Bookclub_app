@@ -137,6 +137,9 @@ Die Anwendung verfügt nun über:
 - aggregierte Statistiken  
 - Echtzeit-Aktualisierung  
 
+### Screenshot
+
+![Upload](Image/app-v5-design.png)
 ---
 
 ## Nächste Schritte (optional)
